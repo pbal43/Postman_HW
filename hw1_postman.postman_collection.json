@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "4c535732-2f99-4b5d-957d-cf37b4ce624e",
+		"name": "hw1_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/get_method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Создать запросы в Postman.\r",
+							"\r",
+							"// Protocol: http\r",
+							"// IP: 162.55.220.72\r",
+							"// Port: 5005\r",
+							"\r",
+							"// EP_1\r",
+							"// Method: GET\r",
+							"// EndPoint: /get_method\r",
+							"// request url params: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"\r",
+							"// response: \r",
+							"// [\r",
+							"//     “Str”,\r",
+							"//     “Str”\r",
+							"// ]"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/get_method?name=Pablo&age=24",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"get_method"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pablo"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_2\r",
+							"// Method: POST\r",
+							"// EndPoint: /user_info_3\r",
+							"// request form data: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  salary: int\r",
+							"\r",
+							"// response: \r",
+							"// {'name': name,\r",
+							"//           'age': age,\r",
+							"//           'salary': salary,\r",
+							"//           'family': {'children': [['Alex', 24], ['Kate', 12]],\r",
+							"//                      'u_salary_1_5_year': salary * 4}}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Pablo",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "800",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_3",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/object_info_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_3\r",
+							"// Method: GET\r",
+							"// EndPoint: /object_info_1\r",
+							"// request url params: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  weight: int\r",
+							"\r",
+							"// response: \r",
+							"// {'name': name,\r",
+							"//           'age': age,\r",
+							"//           'daily_food': weight * 0.012,\r",
+							"//           'daily_sleep': weight * 2.5}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_1?name=Pablo&age=24&weight=65",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pablo"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "weight",
+							"value": "65"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/object_info_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_4\r",
+							"// Method: GET\r",
+							"// EndPoint: /object_info_2\r",
+							"// request url params: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  salary: int\r",
+							"\r",
+							"// response: \r",
+							"// {'start_qa_salary': salary,\r",
+							"//           'qa_salary_after_6_months': salary * 2,\r",
+							"//           'qa_salary_after_12_months': salary * 2.7,\r",
+							"//           'qa_salary_after_1.5_year': salary * 3.3,\r",
+							"//           'qa_salary_after_3.5_years': salary * 3.8,\r",
+							"//           'person': {'u_name': [user_name, salary, age],\r",
+							"//                      'u_age': age,\r",
+							"//                      'u_salary_5_years': salary * 4.2}\r",
+							"//           }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_2?name=Alena&age=23&salary=950",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Alena"
+						},
+						{
+							"key": "age",
+							"value": "23"
+						},
+						{
+							"key": "salary",
+							"value": "950"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/object_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_5\r",
+							"// Method: GET\r",
+							"// EndPoint: /object_info_3\r",
+							"// request url params: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  salary: int\r",
+							"\r",
+							"// response: \r",
+							"// {'name': name,\r",
+							"//           'age': age,\r",
+							"//           'salary': salary,\r",
+							"//           'family': {'children': [['Alex', 24], ['Kate', 12]],\r",
+							"//                      'pets': {'cat':{'name':'Sunny',\r",
+							"//                                      'age': 3},\r",
+							"//                               'dog':{'name':'Luky',\r",
+							"//                                      'age': 4}},\r",
+							"//                      'u_salary_1_5_year': salary * 4}\r",
+							"//           }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_3?name=Pablo&age=24&salary=900",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pablo"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "salary",
+							"value": "900"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/object_info_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_6\r",
+							"// Method: GET\r",
+							"// EndPoint: /object_info_4\r",
+							"// request url params: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  salary: int\r",
+							"\r",
+							"// response: \r",
+							"// {'name': name,\r",
+							"//           'age': int(age),\r",
+							"//           'salary': [salary, str(salary * 2), str(salary * 3)]}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_4?name=Pablo&age=24&salary=900",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pablo"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "salary",
+							"value": "900"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user_info_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// EP_7\r",
+							"// Method: POST\r",
+							"// EndPoint: /user_info_2\r",
+							"// request form data: \r",
+							"//  name: str\r",
+							"//  age: int\r",
+							"//  salary: int\r",
+							"\r",
+							"// response: \r",
+							"// {'start_qa_salary': salary,\r",
+							"//           'qa_salary_after_6_months': salary * 2,\r",
+							"//           'qa_salary_after_12_months': salary * 2.7,\r",
+							"//           'qa_salary_after_1.5_year': salary * 3.3,\r",
+							"//           'qa_salary_after_3.5_years': salary * 3.8,\r",
+							"//           'person': {'u_name': [user_name, salary, age],\r",
+							"//                      'u_age': age,\r",
+							"//                      'u_salary_5_years': salary * 4.2}\r",
+							"//           }"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Pavlik",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_2",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
